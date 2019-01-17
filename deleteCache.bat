@@ -9,6 +9,7 @@ Del /q /f /s "C:\Users\%%m\AppData\Local\Google\Chrome\User Data\Default\GPUCach
 Del /q /f /s "C:\Users\%%m\AppData\Local\Google\Chrome\User Data\Default\Media Cache\*"
 Del /q /f /s "C:\Users\%%m\AppData\Local\CrashDumps\*"
 Del /q /f /s "C:\Users\%%m\Downloads\*"
+REM Clears everything on desktop except shortcuts
 For /f "delims=" %%F in ('Dir /b "C:\Users\%%m\Desktop" ^| findstr /vile ".lnk"') do Del "C:\Users\%%m\Desktop\%%F"
 )
 REM Writes time and task into log
